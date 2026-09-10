@@ -1,0 +1,40 @@
+Package: rio.wmel.longterm
+Title: Long-term effectiveness of Wolbachia introgression in preventing dengue
+    in Rio de Janeiro
+Version: 1.0.0
+Authors@R: c(
+    person("Paloma M.", "Cárcamo", role = c("aut", "cre"),
+           email = "paloma.carcamo@yale.edu"),
+    person("Albert I.", "Ko", role = "aut"))
+Description: Analysis code accompanying the manuscript on the long-term
+    effectiveness of wMel Wolbachia introgression against dengue in Rio de
+    Janeiro, Brazil (2017-2024). Contains the empirical INLA spatiotemporal
+    models and the temperature-dependent SEIR-SEI mechanistic simulations. This
+    is a research compendium, not an installable package; see README.md.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Depends:
+    R (>= 4.5.0)
+Imports:
+    tidyverse,
+    sf,
+    terra,
+    raster,
+    exactextractr,
+    fmesher,
+    INLA,
+    deSolve,
+    patchwork,
+    slider,
+    scales,
+    geobr,
+    ggspatial,
+    ggnewscale,
+    RColorBrewer,
+    zoo,
+    nngeo,
+    colorspace
+Suggests:
+    censobr,
+    renv
+Additional_repositories: https://inla.r-inla-download.org/R/stable
