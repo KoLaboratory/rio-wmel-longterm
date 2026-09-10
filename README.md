@@ -42,7 +42,7 @@ rio-wmel-longterm/
   and are listed in `DESCRIPTION`. Spatial packages (`sf`, `terra`, `raster`,
   `exactextractr`) require system libraries GDAL, GEOS and PROJ.
 
-### Reproducible environment (recommended)
+### Reproducible environment
 
 Pin exact package versions with [`renv`](https://rstudio.github.io/renv/)
 (run in console after commit)
@@ -68,33 +68,6 @@ Rscript analysis/02_empirical_analysis.R
 Rscript analysis/03_run_simulations.R
 Rscript analysis/04_simulation_figures.R
 ```
-
-Notes:
-
-- The **empirical** (01–02) and **simulation** (03–04) halves are independent.
-  The simulation scripts do not require INLA or the spatial stack.
-- `01_prepare_data.R` writes `data/interim/prepared.rds`; `02` loads it (or reuses
-  the objects if run in the same session via `run_all.R`).
-- `03_run_simulations.R` **caches** each scenario under `data/interim/`. The ODE
-  integrations are the slow step; reruns skip completed scenarios. Delete a
-  cache file or set `FORCE_RERUN <- TRUE` to recompute.
-- Figures are printed to the active device. `ggsave()` calls are left commented
-  (they already point at `outputs/`); uncomment them to write files.
-
-## Where each figure/table is produced
-
-| Manuscript item | Script |
-|---|---|
-| Figure 1 (descriptive maps, case time series, introgression) | `analysis/02_empirical_analysis.R` |
-| Figure 2 (primary cumulative & year-specific models) | `analysis/02_empirical_analysis.R` |
-| Figure 3 (pre-intervention risk & future introgression) | `analysis/02_empirical_analysis.R` |
-| Figure 4 (effect under alternative spatial-risk adjustments) | `analysis/02_empirical_analysis.R` |
-| Figure 5 (simulation results) | `analysis/04_simulation_figures.R` |
-| Table S2 (model comparison / sensitivity) | `analysis/02_empirical_analysis.R` |
-| Table S3 (adjustment for past cumulative incidence) | `analysis/02_empirical_analysis.R` |
-| Figures S2–S4 (introgression tileplot, municipal comparison, ovitrap models) | `analysis/02_empirical_analysis.R` |
-| Figures S5–S8 (simulation supplements) | `analysis/04_simulation_figures.R` |
-
 ## License
 
 Code is released under the MIT License (see `LICENSE`).
